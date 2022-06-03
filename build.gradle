@@ -2,11 +2,8 @@ allprojects {
     // ここに記述するとルートプロジェクトを含む全プロジェクトに適用される
 
     // cf. http://gradle.monochromeroad.com/docs/userguide/project_reports_plugin.html
-    apply plugin: 'project-report'
+//    apply plugin: 'project-report'
 
-    // cf. http://gradle.monochromeroad.com/docs/userguide/checkstyle_plugin.html
-    // config/checkstyle/checkstyle.xml に定義されたstyleを読み込みます。checkタスクを実行するとcheckstyleのタスクが含まれます。
-    apply plugin: 'checkstyle'
 }
 
 // プロジェクトrootに存在するbuild.gradleでは、subprojectsを指定することでサブプロジェクト全てに適用する設定を指定できます。
