@@ -1,0 +1,38 @@
+allprojects {
+    // ここに記述するとルートプロジェクトを含む全プロジェクトに適用される
+
+    // cf. http://gradle.monochromeroad.com/docs/userguide/project_reports_plugin.html
+    apply plugin: 'project-report'
+
+    // cf. http://gradle.monochromeroad.com/docs/userguide/checkstyle_plugin.html
+    // config/checkstyle/checkstyle.xml に定義されたstyleを読み込みます。checkタスクを実行するとcheckstyleのタスクが含まれます。
+    apply plugin: 'checkstyle'
+}
+
+// プロジェクトrootに存在するbuild.gradleでは、subprojectsを指定することでサブプロジェクト全てに適用する設定を指定できます。
+// ここに記述するとサブプロジェクトのみが対象となります。
+subprojects {
+
+    // cf. http://gradle.monochromeroad.com/docs/userguide/java_plugin.html
+    apply plugin: 'java'
+
+    // コンパイル対象バージョンの指定 ( javac の -source, -target に対応するオプションに相当する )
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+
+    // javacコマンドへのオプションを指定できます。
+    // compileJava の中で options.<オプション名> = <値> とすれば指定できます。以下の例ではjavacのencodingオプションを指定しています。
+    compileJava {
+        options.encoding = 'UTF-8'
+    }
+
+    // versionの指定
+    // gradle build時にbuildディレクトリ中に作成されるzipやjarを"<project>-0.0.1-SNAPSHOT.zip"やを"<project>-0.0.1-SNAPSHOT.jar"という名称で生成します。
+    version = '0.0.1-SNAPSHOT'
+
+    // jarパッケージの取得するレポジトリの指定です
+    repositories {
+        mavenCentral()
+    }
+}
