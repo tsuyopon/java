@@ -1,0 +1,26 @@
+plugins {
+    // http://gradle.monochromeroad.com/docs/userguide/war_plugin.html
+    // providedCompileにはwarプラグインが必要となる
+    id 'war'
+
+    // grettyプラグインを使うとjetty, tomcatともにgradleから起動できるようになる。
+    // see: https://gretty-gradle-plugin.github.io/gretty-doc/
+    id "org.gretty" version "4.0.2"
+}
+
+group = 'co.jp.GraddleApp'
+version = '0.0.1-SNAPSHOT'
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+}
+
+// see: https://gretty-gradle-plugin.github.io/gretty-doc/Gretty-configuration.html
+gretty {
+    servletContainer = 'jetty11'  // これを指定しないとデフォルトはjettyになる
+    httpPort = 8080      // port を変更する場合
+    contextPath = "/" // contextPath を変更する場合 (これを指定しないと/HelloServletが標準となる)
+}
