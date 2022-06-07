@@ -13,6 +13,7 @@ import java.security.Principal;
 
 // 以下だと/servletしか提供されないが、
 // value="/"にすると/hoge, /fugaなどの任意のURLでもこのServletから提供されるようになる
+// アノテーションはServletのバージョン3.0から採用された技術であり、それ以前はWEB-INF/web.xmlにサーブレットとパッケージのマッピングを記述する必要がありました。
 @WebServlet(value="/servlet", name="Hello Servlet")
 public class HelloHttpServlet extends HttpServlet {
 
