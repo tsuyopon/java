@@ -11,7 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.Principal;
 
-@WebServlet(value="/", name="Hello Servlet")
+// 以下だと/servletしか提供されないが、
+// value="/"にすると/hoge, /fugaなどの任意のURLでもこのServletから提供されるようになる
+@WebServlet(value="/servlet", name="Hello Servlet")
 public class HelloHttpServlet extends HttpServlet {
 
     private String greeting;
