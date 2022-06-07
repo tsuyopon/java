@@ -10,4 +10,4 @@
 rootProject.name = 'GraddleApp'
 
 // includeは複数行にわけて記載することもできます。階層が深い場合にはスラッシュをコロンに置換してディレクトリパスを記述する
-include('app', 'lib', 'services:app')
+include('app', 'Servlet:HelloServlet', 'lib', 'services:app')
