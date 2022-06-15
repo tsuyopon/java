@@ -1,0 +1,27 @@
+//plugins {
+//    // Apply the application plugin to add support for building a CLI application in Java.
+//    id 'application'
+//}
+//
+//// projectで設定される依存性です。repositoryで指定したレポジトリ情報から取得します。
+//// 書式としては「グループ名:名前:バージョン」となります。
+//dependencies {
+//    // Use JUnit Jupiter for testing.
+//    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+//
+//    // This dependency is used by the application.
+//    implementation 'com.google.guava:guava:30.1.1-jre'
+//}
+//
+//// applicationプラグインと合わせて以下でmainClassを指定するとjavaコマンドを使って実行する代わりにgradle経由でjavaアプリケーションを実行できる(gradle run)
+//// see: https://qiita.com/opengl-8080/items/4c1aa85b4737bd362d9e
+//application {
+//    // gradle runで実行したいクラスを指定する
+//    mainClass = 'GraddleApp.App'
+//}
+//
+//tasks.named('test') {
+//    // Use JUnit Platform for unit tests.
+//    useJUnitPlatform()
+//}
+//

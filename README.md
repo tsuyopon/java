@@ -28,3 +28,9 @@ $ ./gradlew :app2:run
 # メモ
 - Gradle周りは自身のGradleAppからコピーしてcommitしている。
 - oldには昔からあったコードを配置しているだけ。
+
+# 参考資料
+- Qiita: Javaを使うなら知っておきたい技術、フレームワーク、ライブラリ、ツールまとめ
+  - https://qiita.com/disc99/items/727b51dbe737602a5c91
+- awesome-java
+  - https://github.com/akullpp/awesome-java
