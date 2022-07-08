@@ -36,7 +36,7 @@ public class App {
             // バッファの内容を文字列化して返します。
             return sb.toString();
         } finally {
-            // リーダを閉じます。
+            // リーダを閉じます。例外が発生したかどうかに関わらず実行したい処理がfinally中に記載されます。
             br.close();
         }
     }
