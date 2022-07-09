@@ -16,5 +16,11 @@ public class App {
         impl.doPost();
         impl.doPost("TestString");
 
+        // ここはInterfaceでdefault宣言して実装が呼ばれる。doHeadはSampleApiImplで実装されていないことに注意する。
+        impl.doHead();
+
+        // 以下は「SampleApiImpl.getExplain()」だとシンボルが存在しないエラーとなり呼び出せない。
+        // これはgetExpalinがSampleApiInterface中でstaticで呼ばれていて、コンパイル時に決定してしまうことに起因する。
+        SampleApiInterface.getExplain();
     }
 }
