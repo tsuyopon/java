@@ -22,6 +22,8 @@ abstractとinterface使い分けとしては、このようなイメージだと
 基本的には多くのビジネスロジック処理は管理者も一般ユーザと一致しているので、AdminUserはGeneralUserを継承しています。同一のロジックはsuper.xxx()で呼び出しています。
 管理者側に必要な追加処理があればその処理は別途呼び出しています。
 
+App.javaの中からはGeneralUserかAdminUserかを判定して、画面閲覧許可を指示した上で、メイン処理を実行しています。
+
 # mainを実行する
 ```
 $ gradlew OOP:AbstractTest run
