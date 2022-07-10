@@ -1,8 +1,9 @@
 # 概要
-JAVAで自身が試したサンプルコードを配置するためだけのレポジトリ 
-GradleAppの雛形をコピーしてそのままcommitしています
+JAVAで自身が試したサンプルコードを配置するためだけのレポジトリです。
+以下のGradleAppの雛形をコピーしてそのままcommitしています
+- https://github.com/tsuyopon/GradleApp
 
-Spring Boot用のサンプルはここではなくて以下に配置すること
+Spring Boot用のサンプルはここではなくて以下に配置してください。
 - https://github.com/tsuyopon/my-springboot-web
 
 
@@ -23,7 +24,10 @@ $ vim settings.gradle
 $ ./gradlew :app2:run
 ```
 
-あとはapp2にサンプルコードを追加すれば良い
+IntelliJからsettings.gradle更新の反映を行た場合には以下を参考にすると良いでしょう
+- https://nainaistar.hatenablog.com/entry/2021/03/08/120000
+
+あとはapp2にサンプルコードを追加して、サンプルプログラムとして問題なければ、このレポジトリにcommitすれば良い。
 
 # メモ
 - Gradle周りは自身のGradleAppからコピーしてcommitしている。
