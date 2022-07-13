@@ -12,6 +12,6 @@ rootProject.name = 'GraddleApp'
 // includeは複数行にわけて記載することもできます。階層が深い場合にはスラッシュをコロンに置換してディレクトリパスを記述する
 include('app', 
 'Basic:HelloWorld', 'Basic:WebAPI:RssRequestSample', 'Basic:Initializer', 'Basic:CopyArgValue',
-'OOP:InterfaceTest', 'OOP:MultiInterfaceTest', 'OOP:AbstractTest', 'OOP:FinalTest', 'OOP:StaticTest',
+'OOP:InterfaceTest', 'OOP:MultiInterfaceTest', 'OOP:AbstractTest', 'OOP:FinalTest', 'OOP:StaticTest', 'OOP:MemberAccessTest',
 'Servlet:HelloServlet', 'Servlet:HelloServletJetty', 'Servlet:ServletScopeTest',
 'lib', 'services:app')
