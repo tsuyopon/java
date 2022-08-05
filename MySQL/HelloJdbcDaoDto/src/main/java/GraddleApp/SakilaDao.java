@@ -44,7 +44,7 @@ public class SakilaDao {
                     dto.setLastName(rs.getString("last_name"));
                     list.add(dto);
 
-                    
+
 //                    System.out.println(
 //                            rs.getInt("actor_id") + " " +
 //                                    rs.getString("first_name") + " " +

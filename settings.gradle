@@ -14,5 +14,5 @@ include('app',
 'Basic:HelloWorld', 'Basic:WebAPI:RssRequestSample', 'Basic:Initializer', 'Basic:CopyArgValue',
 'OOP:InterfaceTest', 'OOP:MultiInterfaceTest', 'OOP:AbstractTest', 'OOP:FinalTest', 'OOP:StaticTest', 'OOP:MemberAccessTest',
 'Servlet:HelloServlet', 'Servlet:HelloServletJetty', 'Servlet:ServletScopeTest',
-'MySQL:HelloJdbc', 'MySQL:HelloJdbcDaoDto',
+'MySQL:HelloJdbc', 'MySQL:HelloJdbcDaoDto', 'MySQL:HelloJdbcCallProcedure',
 'lib', 'services:app')
