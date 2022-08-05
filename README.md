@@ -1,10 +1,12 @@
 # 概要
-JAVAで自身が試したサンプルコードを配置するためだけのレポジトリです。
+JAVAプログラムで自身が勉強のために手元で試したサンプルコードを配置するためだけのレポジトリです。
 以下のGradleAppの雛形をコピーしてそのままcommitしています
 - https://github.com/tsuyopon/GradleApp
 
 Spring Boot用のサンプルはここではなくて以下に配置してください。
 - https://github.com/tsuyopon/my-springboot-web
+
+各サンプルコードはsettings.gradleにプロジェクトが記載されてgradleから簡単に実行できるようになっています。
 
 
 # JAVAプロジェクトの追加

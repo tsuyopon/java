@@ -1,5 +1,13 @@
 # 概要
+MySQLのストアドプロシージャを実行する非常に単純なサンプルです
 
+ストアドプロシージャを呼び出す場合にはCallableStatementクラスを利用する。詳細は以下のAPIリファレンスを参照すること
+- https://docs.oracle.com/javase/jp/8/docs/api/java/sql/CallableStatement.html
+
+ここではsakila.film_in_stockを呼び出す本当に多純なサンプルのみ紹介します。
+
+
+# 補足
 sakilaデータベースに存在する下記のfilm_in_stockというプロシージャを利用している
 - https://dev.mysql.com/doc/sakila/en/sakila-structure-procedures-film_in_stock.html
 ```

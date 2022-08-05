@@ -29,14 +29,23 @@ public class App {
         // cf. https://dev.mysql.com/doc/sakila/en/sakila-structure-procedures-film_in_stock.html
         final String SQL = "CALL film_in_stock(?, ?, ?);";
 
-        try(Connection conn =
-                    DriverManager.getConnection(URL, USER, PASS) ){
+        Connection conn = null;
+        CallableStatement cs = null;
 
-            // 自動的にcommitされないようにする(今回は不要かも!?)
+        try {
+
+            // See
+            //  cf. https://docs.oracle.com/javase/jp/8/docs/api/java/sql/DriverManager.html
+            //  cf. https://docs.oracle.com/javase/jp/8/docs/api/java/sql/Connection.html
+            conn = DriverManager.getConnection(URL, USER, PASS);
+
+            // 自動的にcommitされないようにする(今回は更新ないので、意識しなくてokなはず)
             conn.setAutoCommit(false);
 
-            // SQLを指定し準備しておく
-            CallableStatement cs = conn.prepareCall(SQL);
+            // SQLを指定し準備しておく。ストアドプロシージャの実行の場合にはCallableStatementとする必要があるらしい
+            // 今回使っている主な関数は以下のリファレンスを参照のこと
+            // cf. https://docs.oracle.com/javase/jp/8/docs/api/java/sql/CallableStatement.html
+            cs = conn.prepareCall(SQL);
 
             // 3番目の引数は OUTパラメータでINTEGERが帰ってくる
             cs.registerOutParameter(3, Types.INTEGER);
@@ -54,10 +63,22 @@ public class App {
             // 結果を出力する
             System.out.println("プロシージャ実行により取得したレコード数は"+ret+"件です。");
 
+            // コミットする (今回はcommit処理ないのですが、更新時は意識する必要があり)
+            conn.commit();
+
+            // クローズ処理
+            if (cs != null) cs.close();
+            if (conn != null) conn.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
-            e.printStackTrace();
+            try {
+                conn.rollback();       //ロールバックする
+                e.printStackTrace();   //エラー内容をコンソールに出力する
+            } catch (Exception ex){    // rollbackのエラーで例外補足が必要となる
+                System.out.println("rollbackで不備が発生しました。処理を終了します");
+            }
         } finally {
             System.out.println("処理が完了しました");
         }
